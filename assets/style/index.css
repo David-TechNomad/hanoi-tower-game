@@ -1,0 +1,176 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: normal 14px/1.42857 Tahoma;
+}
+
+#app {
+  height: 100vh;
+}
+
+/******* 引导页 *******/
+.guide-box {
+  inset-block-start: 50%;
+  margin: 0 auto;
+  transform: translateY(25%);
+}
+.guide-box::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+.guide-box > h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+}
+.guide-box > ul {
+  font-size: 13px;
+}
+
+/******* 游戏结算页 *******/
+.result-box-outer {
+  position: fixed;
+  inset: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.7);
+}
+.result-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  padding: 0 50px 20px;
+  margin: 0;
+  text-align: center;
+  transform: translate(-50%, -50%) scale(0);
+  background: #f5e1a8;
+  border: 0;
+  border-radius: 20% / 50%;
+  box-shadow: 0 0 60px #ffec3d;
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+}
+.result-box[open] {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.result-box-title {
+  display: flex;
+  justify-content: center;
+  gap: 0.25em;
+  margin: 0;
+  transform: translateY(-0.5em);
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffec3d;
+  text-shadow: 0 0 1px #000;
+}
+.result-box-title > span {
+  transform: translateY(-0.25em);
+}
+.result-box-title > span:first-child {
+  transform: rotate(-35deg);
+}
+.result-box-title > span:last-child {
+  transform: rotate(35deg);
+}
+
+/******* 结算信息 *******/
+.result-info {
+  display: inline-grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 6px 1em;
+  margin: 0;
+}
+.result-info > dt {
+  text-align: right;
+  color: #333;
+  text-align-last: justify;
+}
+.result-info > dt::after {
+  position: absolute;
+  content: "：";
+}
+.result-info > dd {
+  text-align: left;
+  margin: 0;
+  color: #7bca13;
+}
+
+/******* 游戏设置栏 *******/
+.setting-bar {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 0.5em 0.5em 0;
+  background: #fff;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+.setting-bar > summary {
+  padding: 0.5em;
+  margin: -0.5em -0.5em 0;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+}
+.setting-bar[open] {
+  padding: 0.5em;
+}
+.setting-bar[open] > summary {
+  margin-bottom: 0.5em;
+}
+.setting-bar > section {
+  margin: 1em;
+}
+.setting-bar .btn-block {
+  margin: 1em 0;
+}
+
+/******* 按钮等 UI *******/
+.btn {
+  font-size: 13px;
+  border: 2px solid;
+  border-radius: 2em;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-primary {
+  padding: 0.5em 1em;
+  color: #db8e12;
+  background: linear-gradient(#fdfeed, #f7dcb2);
+}
+.btn-primary:hover {
+  color: #e9b60e;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  padding: 5px;
+  background: #fdfeed;
+  border-color: #666;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.level-selector {
+  padding: 0.5em;
+  border-color: #d3d3d3;
+}
+
+/******* TinyVue *******/
+.hanoi-app__tiny-vue {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+}
